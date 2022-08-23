@@ -1,0 +1,146 @@
+//   Kattunge Waybar Config // Aug 2022
+[{
+  "layer": "top",
+  "output": "DP-1",
+  "width": 2300,
+  "margin-top": 10,
+  "modules-left": ["wlr/workspaces"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": ["custom/notification","custom/media","clock", "clock#date","pulseaudio","bluetooth","network","custom/session"],
+  "wlr/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "all-outputs": false,
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "default": ""
+    }
+  },
+  "custom/notification": {
+    "exec": "cat '/tmp/notifications'",
+    "interval": 1,
+	  "return-type": "json",
+	  "max-length": 50
+  },
+  "custom/media": {
+    "format": "{icon} {}",
+    "return-type": "json",
+    "max-length": 40,
+    "format-icons": {
+        "spotify": "",
+        "default": "🎜"
+    },
+    "escape": true,
+    "on-click": "playerctl play-pause",
+    "on-scroll-up": "playerctl position 5+",
+		"on-scroll-down": "playerctl position 5-",
+    "exec": "$HOME/.config/waybar/scripts/mediaplayer.py 2> /dev/null"
+},
+  "clock": {
+    "interval": 60,
+    "format": "{:  %I:%M%p}"
+  },"clock#date": {
+    "interval": 60,
+    "format": "{:  %A %d %b}"
+  },
+  "bluetooth": {
+    "format": "",
+    "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{num_connections} connected\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_address}\t{device_battery_percentage}%"
+  },
+  "custom/session": {
+    "format": "{icon}",
+    "format-icons": {
+      "default":""
+    },
+    "toolip":true,
+    "on-click": "~/.config/rofi/powermenu/powermenu.sh &"
+  },
+  "pulseaudio": {
+    "format": "{icon}  {volume}% ",
+    "format-bluetooth": "{icon}  {volume}% " ,
+    "format-muted": "婢",
+    "format-icons": {
+        "hdmi": "",
+        "default": ["婢","", "", ""]
+    },
+    "scroll-step": 1,
+    "on-click": "pavucontrol"
+},
+"network": {
+  "interface": "enp39s0",
+  "format": "{ifname}",
+  "format-wifi": "{essid} ({signalStrength}%) ",
+  "format-ethernet": "",
+  "format-disconnected": "", //An empty format will hide the module.
+  "tooltip-format": "{ifname} via {gwaddr} ",
+  "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+  "tooltip-format-ethernet": "  {ipaddr}   {bandwidthDownBits}    {bandwidthUpBits}",
+  "tooltip-format-disconnected": "",
+  "max-length": 50
+}
+},{
+  "layer": "top",
+  "output": "DP-3",
+  "height": 30,
+  "width": 1728,
+  "margin-top": 10,
+  "modules-left": ["wlr/workspaces"],
+  "modules-center": [],
+  "modules-right": ["clock"],
+  "wlr/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "all-outputs": false,
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "9": "",
+      "urgent": "",
+      "default": ""
+    }
+  },
+  "clock": {
+    "interval": 60,
+    "format": "{:  %I:%M %p}"
+  }
+},{
+  "layer": "top",
+  "output": "HDMI-A-1",
+  "height": 30,
+  "width": 1728,
+  "margin-top": 10,
+  "modules-left": ["clock"],
+  "modules-center": [],
+  "modules-right": ["wlr/workspaces"],
+  "wlr/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "all-outputs": false,
+    "format-icons": {
+      "1": "",
+      "2": "",
+      "3": "",
+      "4": "",
+      "5": "",
+      "6": "",
+      "urgent": "",
+      "default": ""
+    }
+  },
+  "clock": {
+    "interval": 60,
+    "format": "{:  %I:%M %p}"
+  }
+}]

@@ -1,0 +1,160 @@
+/*  Kattunge Waybar Style // Aug 2022  */
+@define-color background rgba(0, 0, 0, 0.3);
+@define-color foreground rgb(220, 220, 220);
+@define-color foregroundAlt rgb(31,31,31);
+@define-color error rgb(255, 105, 97);
+@define-color disabled rgb(78, 78, 78);
+@define-color pink rgb(226, 204, 219);
+@define-color pinkDrk rgb(195, 149, 180);
+@define-color pinkSat rgb(229, 201, 220);
+@define-color pinkDesat rgb(224, 206, 218);
+
+
+
+* {
+    font-family: Inter Nerd Font;
+    font-weight:200;
+}
+
+window#waybar {
+    background: @background;
+    border-radius: 5px;
+    color: @foreground;
+}
+
+window.DP-1 {
+    font-size: 1.em;
+}
+
+window.DP-3,
+window.HDMI-A-1 {
+    font-size: .9em;
+}
+
+window.DP-3 #workspaces,
+window.HDMI-A-1 #workspaces {
+    font-size:.95em;
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    padding: 0 25px;
+    border-radius:10px;
+}
+
+#workspaces button,
+#taskbar button {    
+    border-radius: 0;
+    font-size: 1.4em;
+    color: @foreground;
+    box-shadow: inset 0 -.08em @disabled;
+    transition: box-shadow .20s ease-in-out, color .25s ease-in-out;
+}
+
+#workspaces button {
+    margin-right: .15em;
+    padding: .35em 1.15em;
+}
+
+#taskbar button {
+    margin-right: .15em;
+    padding: 0 .45em;
+}
+
+#workspaces button.active,
+#taskbar button.active {
+    box-shadow: inset 0 -.08em @pink;
+}
+
+#workspaces button:hover,
+#taskbar button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+    box-shadow: inset 0 -40px @pink;
+    color:@foregroundAlt;
+}
+
+
+#workspaces button.focused,
+#taskbar button.focused {
+    box-shadow: inset 0 -40px @pink;
+    color:@foregroundAlt;
+}
+
+#workspaces button.hidden,
+#taskbar button.hidden {
+    box-shadow: inset 0 -.08em @disabled;
+}
+
+#workspaces button.urgent,
+#taskbar button.urgent {
+    box-shadow: inset 0 -40px @error;
+    animation: warn 2s ease-in-out infinite;
+}
+
+#window {
+    font-size: 1.25em;
+    font-weight:300;
+    background:rgba(0,0,0,.25);
+    padding: 0px 20px;
+    margin:5px;
+    border-radius: 5px;
+}
+
+#clock {
+    padding:0em 0.85em;
+    margin: 0em 0.1em;
+    box-shadow: inset 0 -.08em @pink;
+}
+
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#mpd,
+#custom-session,
+#network.ethernet,
+#network.wifi,
+#network.linked,
+#bluetooth.on,
+#bluetooth.pairable {
+    padding:0em 0.5em;
+    margin: 0em 0.1em;
+    box-shadow: inset 0 -.08em @pink;
+}
+
+#pulseaudio.muted {
+    box-shadow: inset 0 -.08em @error;
+}
+
+#bluetooth.discovering {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+#network.disconnected,
+#network.disabled,
+#bluetooth.off {
+    box-shadow: inset 0 -.08em @disabled;
+}
+
+@keyframes warn {
+    0% {  }
+    50% { background: #ff574d; color: @foregroundAlt; }
+    100% {  }
+}
+
+@keyframes pulse {
+    0% {  }
+    40% { background: @pink;  color: @foregroundAlt; }
+    60% { background: @pink;  color: @foregroundAlt; }
+    100% {  }
+}

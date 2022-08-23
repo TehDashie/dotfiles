@@ -1,0 +1,67 @@
+/*   Kattunge Wofi style // Aug 2022 */
+@define-color background rgba(0, 0, 0, 0.65);
+@define-color foreground rgb(220, 220, 220);
+@define-color pink rgb(226, 204, 219);
+
+window {
+    background-color: @background;
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+#text {
+    font-family: Inter Nerd Font;
+    font-weight: 200;
+    font-size: 1.3em;
+    color: @foreground;
+}
+
+#input {
+    padding: .95em;
+    margin: .5rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: inset 0 -.2rem @pink,0px 0px 10px 1px rgba(0,0,0,0.61);
+    font-family: Inter Nerd Font;
+    font-size: 1.3em;
+    font-weight: 200;
+    border-radius: 0;
+}
+
+#outer-box {
+    padding: 2em;
+}
+
+
+#scroll {
+    margin-top: 1em;
+}
+
+#entry {
+    padding: 1.2em;
+    margin: .5rem;
+    border-radius: 0px;
+    border: none;
+    box-shadow: inset 0rem 0px rgba(0, 0, 0, 0);
+    transition: box-shadow .30s ease-in-out, background-color .30s ease-in-out;
+}
+
+#entry {
+    background: none;
+}
+
+#entry>box {
+    margin-left: .25em;
+}
+
+#entry image {
+    /* padding-right: .25em; */
+    margin-right: 1em;
+}
+
+#entry:selected {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    box-shadow: inset .2rem 0px @pink;
+
+}

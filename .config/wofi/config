@@ -1,0 +1,10 @@
+# Kattunge Wofi Config // Aug 2022
+monitor=DP-1
+hide_scrollbar=true
+width=30%
+columns=2
+show=drun
+no_actions=true
+prompt= Search
+allow_images=true
+image_size=32
