@@ -13,7 +13,7 @@
 
 * {
     font-family: Inter Nerd Font;
-    font-weight:200;
+    /* font-weight:100; */
 }
 
 window#waybar {
@@ -23,7 +23,7 @@ window#waybar {
 }
 
 window.DP-1 {
-    font-size: 1.em;
+    font-size: 1em;
 }
 
 window.DP-3,
@@ -102,12 +102,7 @@ window.HDMI-A-1 #workspaces {
     border-radius: 5px;
 }
 
-#clock {
-    padding:0em 0.85em;
-    margin: 0em 0.1em;
-    box-shadow: inset 0 -.08em @pink;
-}
-
+#clock,
 #battery,
 #cpu,
 #memory,
@@ -128,7 +123,7 @@ window.HDMI-A-1 #workspaces {
 #bluetooth.on,
 #bluetooth.pairable {
     padding:0em 0.5em;
-    margin: 0em 0.1em;
+    margin: 0em .1em;
     box-shadow: inset 0 -.08em @pink;
 }
 
@@ -137,7 +132,7 @@ window.HDMI-A-1 #workspaces {
 }
 
 #bluetooth.discovering {
-    animation: pulse 2s ease-in-out infinite;
+    animation: pulsePink 2s ease-in-out infinite;
 }
 
 #network.disconnected,
@@ -152,7 +147,7 @@ window.HDMI-A-1 #workspaces {
     100% {  }
 }
 
-@keyframes pulse {
+@keyframes pulsePink {
     0% {  }
     40% { background: @pink;  color: @foregroundAlt; }
     60% { background: @pink;  color: @foregroundAlt; }
