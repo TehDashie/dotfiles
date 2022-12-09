@@ -1,0 +1,23 @@
+output=DP-1
+anchor=top-right
+font=Inter Nerd Font 10
+background-color=#0000004c
+text-color=#dcdcdc
+icons=1
+max-icon-size=100
+markup=1
+actions=1
+history=1
+margin=0,0,0,0
+outer-margin=25,20,10,0
+padding=20
+border-size=1
+border-color=#ffffff26
+border-radius=10
+default-timeout=10000
+sort=-time
+format=<b>%a - %s</b>\n%b
+group-by=summary
+
+[grouped]
+format=<span font='8'>%a</span>\n(%g) <b>%s</b>\n%b

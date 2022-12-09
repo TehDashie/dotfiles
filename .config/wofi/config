@@ -7,4 +7,4 @@ no_actions=true
 allow_images=true
 insensitive=true
 image_size=40
-prompt= Search
+prompt=   Search...

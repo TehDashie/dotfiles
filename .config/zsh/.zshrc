@@ -1,6 +1,6 @@
 #   Kattunge ZSH Config // Aug 2022
 
-sh /etc/profile.d/login.sh
+sh ~/.config/zsh/login.sh
 
 # Powerlevel10k 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
